@@ -11,7 +11,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 public class Person {
-	private Long id;
-	private String name;
-	private String surname;
+
+  private Long id;
+  private String name;
+  private String surname;
 }

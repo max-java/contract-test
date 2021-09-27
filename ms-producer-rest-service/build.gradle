@@ -11,9 +11,11 @@ plugins {
 	id 'org.springframework.boot' version '2.5.5'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+
 }
 
 apply plugin: 'spring-cloud-contract'
+apply plugin: 'maven-publish'
 
 group = 'com.tutrit'
 version = '0.0.1-SNAPSHOT'
@@ -27,6 +29,14 @@ configurations {
 
 repositories {
 	mavenCentral()
+}
+
+publishing {
+	publications {
+		maven(MavenPublication) {
+			artifact verifierStubsJar
+		}
+	}
 }
 
 ext {
